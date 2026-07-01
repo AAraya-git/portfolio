@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BI Management System — Alejandra Araya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="orb-field">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <span class="floaty f1">✨</span>
+  <span class="floaty f2">⋆</span>
+  <span class="floaty f3">✦</span>
+  <span class="floaty f4">✧</span>
+  <span class="floaty f5">⋆</span>
+</div>
+
+<div class="wrap detail-hero">
+  <a class="back-link" href="../index.html#projects">← back to projects</a>
+  <h1>📊 BI Management System</h1>
+  <p class="role" style="max-width:640px; color:var(--text-muted); margin-bottom:0;">
+    A full relational data system built in Google Sheets for an apparel design studio —
+    modeling designs, materials, orders, and inventory the way a real database would,
+    with automation replacing manual tracking end to end.
+  </p>
+  <div class="detail-meta" style="margin-top:24px;">
+    <span class="chip chip-a">Google Sheets</span>
+    <span class="chip chip-b">Data Modeling</span>
+    <span class="chip chip-c">Relational Schema Design</span>
+    <span class="chip chip-a">Formula Automation</span>
+    <span class="chip chip-b">Looker Studio</span>
+    <span class="chip chip-c">Data Validation</span>
+  </div>
+
+  <div class="detail-stats">
+    <div class="detail-stat"><span class="num">70</span><span class="label">Clients</span></div>
+    <div class="detail-stat"><span class="num">230</span><span class="label">Orders</span></div>
+    <div class="detail-stat"><span class="num">313</span><span class="label">Order Lines</span></div>
+    <div class="detail-stat"><span class="num">73</span><span class="label">Sellable SKUs</span></div>
+    <div class="detail-stat"><span class="num">149</span><span class="label">Production Batches</span></div>
+    <div class="detail-stat"><span class="num">70–78%</span><span class="label">Avg. Margin</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="detail-block">
+    <h2>The problem</h2>
+    <p>
+      The studio was running on scattered spreadsheets and Notion pages, mixing designs,
+      garment sizes, and colors into one confusing "products" list. There was no reliable
+      way to see real margins per item, inventory quietly went out of sync with actual
+      stock, and inconsistent naming between records (like "Blanco" vs. "Blanco hueso")
+      was already causing order mix-ups before the system existed.
+    </p>
+  </div>
+
+  <div class="detail-block">
+    <h2>What I built</h2>
+    <ul>
+      <li><strong>A real relational data model</strong> — separated the business into independent catalogs (Designs and Materials/blanks), joined through a SKU table where each Design + Material combination auto-generates its own SKU, cost, and margin</li>
+      <li><strong>Automated ID generation</strong> — client, supplier, order, and material IDs are all generated automatically from what's typed in, eliminating manual entry errors</li>
+      <li><strong>BOM-driven inventory</strong> — a bill-of-materials sheet automatically deducts raw materials when a batch is printed and adds to finished-goods inventory, keeping "printing" and "selling" as distinct, auditable events</li>
+      <li><strong>Built-in data validation</strong> — purchase, production, and order entries are checked against master tables in real time, flagging typos before they become bad data</li>
+      <li><strong>Live Kanban order tracking</strong> — orders automatically sort into New / In Progress / Finished / Delivered based on their production and delivery status</li>
+      <li><strong>Volume-based supplier pricing</strong> — purchase costs are suggested automatically based on tiered supplier rates and quantity purchased</li>
+      <li><strong>Flat export tables</strong> feeding a live Looker Studio dashboard for real-time sales, margin, and inventory analytics</li>
+      <li><strong>A documented data dictionary</strong> mapping every sheet's primary/foreign keys — laying the groundwork for a future migration to a proper SQL or Airtable database</li>
+    </ul>
+  </div>
+
+  <div class="detail-block">
+    <h2>Impact</h2>
+    <p>
+      Migrated the studio's existing client list and inventory records from Notion into
+      the new system — cleanly flagging the handful of records that didn't have an exact
+      match instead of silently creating bad data. The system now tracks 70 clients, 230
+      orders (221 active/completed), 313 individual order line items, and 73 sellable
+      SKUs across 5 designs, with real-time computed margins averaging 70–78% per item —
+      replacing what used to be manual spreadsheet reconciliation with a system that
+      updates itself.
+    </p>
+  </div>
+
+  <div class="detail-block">
+    <h2>Working with AI</h2>
+    <p>
+      I designed the full data model, business logic, and system architecture myself —
+      decisions like separating Designs from Materials, structuring the BOM to keep
+      printing and selling as distinct events, and the validation rules all came from
+      understanding how the business actually works. I used Claude to speed up execution:
+      writing formulas faster, catching edge cases, and building this portfolio site.
+      It's a tool that accelerates implementation, not a substitute for the thinking
+      behind it.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Let's connect — <a href="https://github.com/AAraya-git">github.com/AAraya-git</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
